@@ -5,7 +5,7 @@ import Login from "@/components/views/Auth/Login";
 
 const LoginPage = () => {
     return (
-        <AuthLayout title="Acara | Register">
+        <AuthLayout title="Acara | Login">
             <Login />
         </AuthLayout>
     )

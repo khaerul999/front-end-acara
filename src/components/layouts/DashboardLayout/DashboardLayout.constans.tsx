@@ -5,7 +5,7 @@ import {CiGrid41, CiSettings, CiWallet, CiViewList, CiShoppingTag, CiBookmark} f
 const SIDEBAR_ADMIN = [
     {
         key: "dashboard",
-        label: "Dashboad",
+        label: "Dashboard",
         href: "/admin",
         icon: <CiGrid41 />
     },
@@ -46,7 +46,7 @@ const SIDEBAR_ADMIN = [
 const SIDEBAR_MEMBER = [
     {
         key: "dashboard",
-        label: "Dashboad",
+        label: "Dashboard",
         href: "/member",
         icon: <CiGrid41 />
     },

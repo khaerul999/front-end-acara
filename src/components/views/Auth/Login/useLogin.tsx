@@ -1,15 +1,14 @@
 import { useState } from "react"
-import* as yup from "yup"
+import * as yup from "yup"
 import {useForm} from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import { ILogin } from "@/types/Auth"
-import authServices from "@/services/auth.service"
 import { useMutation } from "@tanstack/react-query"
 import { useRouter } from "next/router"
 import { signIn } from "next-auth/react"
 
 
-const LoginSchema = yup.object().shape({
+const loginSchema = yup.object().shape({
     identifier: yup.string().required("Please input emaio or password"),
     password: yup.string().required("Please input your password"),
   
@@ -21,10 +20,10 @@ const useLogin = () => {
     const [isVisible, setIsVilible] = useState(false);
     const toggleVisibility = () => setIsVilible(!isVisible);
 
-    const callbackUrl: string = (router.query.callbackUrl as string) || "/"
+    const callbackUrl: string = (router.query.callbackUrl as string) || "/";
 
     const {control, handleSubmit, formState: {errors}, reset, setError} = useForm({
-        resolver: yupResolver(LoginSchema),
+        resolver: yupResolver(loginSchema),
     })
 
     const loginService = async (payload: ILogin) => {
@@ -47,7 +46,7 @@ const useLogin = () => {
             })
         }, 
         onSuccess: () => {
-            router.push(callbackUrl)
+            router.push(callbackUrl);
             reset();
         }
     });

@@ -1,9 +1,9 @@
-const Dashboard = () => {
+const Dashboard= () => {
     return(
         <>
-        <div>
-            <h1>ini adalah Member Dashboard</h1>
-        </div>
+            <div>
+                ini Dashboard Member
+            </div>
         </>
     )
 }
